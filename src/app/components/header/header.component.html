@@ -1,0 +1,25 @@
+<header class="p-2">
+	<div class="container flex justify-between flex-wrap h-16 mx-auto">
+		<a routerLink="/home" class="flex w-full text-2xl font-bold md:w-auto items-center justify-center md:justify-auto p-2">XYZ Media</a>
+		<ul class="items-stretch space-x-3 flex">
+			<li class="flex">
+				<a routerLink="/home" routerLinkActive="md:text-md text-violet-600 border-violet-600" class="text-sm flex items-center px-2 lg:px-4 border-b-2 border-transparent transition-all">Home</a>
+			</li>
+			<li class="flex" *ngIf="isLoggedIn">
+				<a routerLink="/gallery" routerLinkActive="md:text-md text-violet-600 border-violet-600" class="text-sm flex items-center px-2 lg:px-4 border-b-2 border-transparent transition-all">Gallery</a>
+			</li>
+			<li class="flex">
+				<a routerLink="/about" routerLinkActive="md:text-md text-violet-600 border-violet-600" class="text-sm flex items-center px-2 lg:px-4 border-b-2 border-transparent transition-all">About</a>
+			</li>
+		</ul>
+		<div class="items-center flex-shrink-0 flex">
+			<!-- Public -->
+			<button *ngIf="!isLoggedIn" (click)="toggleModal()" class="self-center px-8 py-3 font-semibold rounded bg-violet-600 transition-colors hover:bg-violet-800 text-white">Log In</button>
+			<!-- Private -->
+			<p class="select-none mx-2 text-violet-600" *ngIf="isLoggedIn"><span class="text-gray-600 hidden md:inline">user: </span>{{'@' + username}}</p>
+			<button *ngIf="isLoggedIn" (click)="logout()" class="self-center px-2 py-2 font-semibold rounded bg-violet-600 transition-colors hover:bg-violet-800 text-white text-sm">Log Out</button>
+
+			<login-modal class="z-10" [show]="showModal" (toggleModal)="toggleModal()"></login-modal>
+		</div>
+	</div>
+</header>

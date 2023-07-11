@@ -1,0 +1,23 @@
+<div class="container px-5 max-w-xl mx-auto my-10">
+    <label class="text-xl text-semibold flex justify-center mb-2">Mention Users</label>
+    <div class="relative">
+        <div class="relative overflow-hidden p-1">
+            <textarea rows="3" (mousedown)="focusUserInput($event)" class="p-2 w-full min-h-[3rem] rounded-md border border-gray-200 focus:ring focus:ri focus:ri border-gray-300 text-gray-900"></textarea>
+            <div class="absolute bottom-0 left-0 p-2 h-full overflow-hidden">
+                <div class="h-full overflow-hidden">&nbsp;
+                    <button *ngFor="let selectedUser of selectedUsers" class="select-none mr-2 bg-zinc-300 hover:bg-zinc-400 transition-colors px-2 flex items-center" contenteditable="false">{{selectedUser.username}}&nbsp;<i (click)="removeSelectedUser(selectedUser)" class="bi bi-x text-xl"></i></button>
+                    <span autofocus (input)="handleInputChange($event)" (keydown)="handleKeyPress($event)" class="!outline-none min-w-5 min-h-full relative" contenteditable="true" #mentionUserInput></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="showAutocomplete && filteredValues.length" class="absolute left-0 z-20 w-48 pb-2 origin-top-left bg-white rounded-md shadow-xl dark:bg-gray-800" contenteditable="false">
+            <a
+            *ngFor="let value of filteredValues; let i=index"
+            class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+            [ngClass]="{ 'bg-blue-500 text-white' : highlightedOption === i }"
+            > {{value}}</a>
+        </div>
+    </div>
+</div>

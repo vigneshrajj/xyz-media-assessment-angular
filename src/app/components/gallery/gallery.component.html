@@ -1,0 +1,38 @@
+<section class="py-6">
+	<div class="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?0">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?1">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer col-span-2 row-span-2 md:col-start-3 md:row-start-1">
+            <img (click)="openImage($event)" src="https://source.unsplash.com/random/301x301/" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-96 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?2">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?3">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer col-span-2 row-span-2 md:col-start-1 md:row-start-3">
+            <img (click)="openImage($event)" src="https://source.unsplash.com/random/302x302/" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-96 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?4">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?5">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?6">
+        </div>
+        <div class="relative overflow-hidden rounded cursor-pointer">
+            <img (click)="openImage($event)" alt="gallery image" class="w-full h-full rounded shadow-sm min-h-48 bg-gray-500 aspect-square transition duration-300 ease-in-out hover:scale-110" src="https://source.unsplash.com/random/200x200/?7">
+        </div>
+	</div>
+</section>
+
+<div (click)="currentImg = ''" [ngClass]="{ 'opacity-100 pointer-events-auto': currentImg }" class="opacity-0 transition-opacity duration-300 pointer-events-none flex fixed inset-0 bg-gray-400/30 backdrop-blur-sm justify-center items-center">
+    <img class="w-3/4 lg:w-auto lg:h-3/4 aspect-square object-cover rounded-md" [src]="currentImg" alt="">
+</div>
