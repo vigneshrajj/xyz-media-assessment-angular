@@ -1,7 +1,7 @@
 # XYZ Media
 
 ### Demo
-[![preview](https://img.youtube.com/vi/GRl0xdoF7tQ/0.jpg)](https://www.youtube.com/watch?v=GRl0xdoF7tQ)
+[![preview](https://img.youtube.com/vi/XJcDMvvYaTA/0.jpg)](https://www.youtube.com/watch?v=XJcDMvvYaTA)
 
 ### Fulfilled Requirements
 - 3 pages - Home, About, Gallery
