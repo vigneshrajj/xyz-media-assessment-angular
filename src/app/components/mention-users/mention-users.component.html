@@ -1,10 +1,10 @@
-<div class="container px-5 max-w-xl mx-auto my-10">
-    <label class="text-xl text-semibold flex justify-center mb-2">Mention Users</label>
+<div class="px-5 max-w-xl mx-auto my-10">
+    <h1 class="text-4xl font-bold mb-2 flex justify-center">Mention Users</h1>
     <div class="relative">
         <div class="relative overflow-hidden p-1">
             <textarea rows="3" (mousedown)="focusUserInput($event)" class="p-2 w-full min-h-[3rem] rounded-md border border-gray-200 focus:ring focus:ri focus:ri border-gray-300 text-gray-900"></textarea>
             <div class="absolute bottom-0 left-0 p-2 h-full overflow-hidden">
-                <div class="h-full overflow-hidden">&nbsp;
+                <div class="h-full overflow-hidden">{{ !inputVal ? '&nbsp;': '' }}
                     <button *ngFor="let selectedUser of selectedUsers" class="select-none mr-2 bg-zinc-300 hover:bg-zinc-400 transition-colors px-2 flex items-center" contenteditable="false">{{selectedUser.username}}&nbsp;<i (click)="removeSelectedUser(selectedUser)" class="bi bi-x text-xl"></i></button>
                     <span autofocus (input)="handleInputChange($event)" (keydown)="handleKeyPress($event)" class="!outline-none min-w-5 min-h-full relative" contenteditable="true" #mentionUserInput></span>
                 </div>

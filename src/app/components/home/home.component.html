@@ -3,16 +3,22 @@
 <!-- Main -->
 <section class="text-gray-800">
     <div class="container flex p-6 mx-auto lg:min-h-1/2">
-      <div class="flex flex-col justify-center p-6 text-center max-w-xl rounded-sm mx-auto">
+      <div class="flex flex-col justify-center p-6 text-center lg:text-left max-w-xl rounded-sm mx-auto lg:ml-0">
         <h1 class="text-4xl font-semibold sm:text-5xl">Access a gallery full of Great Images</h1>
         <p class="my-8 text-lg">This is the gallery of some of the best hand-picked stock images</p>
+      </div>
+      <div class="public-gallery grid-cols-2 gap-4 rounded-xl overflow-hidden hidden lg:grid">
+        <div *ngFor="let idx of [1,2,3,4]" class="relative">
+            <p class="text-white bg-gray-900/20 backdrop-blur absolute inset-0 z-1 cursor-pointer flex justify-center items-center text-center text-2xl opacity-0 hover:opacity-100 transition-opacity">Image description</p>
+            <img class="aspect-square" [src]="'https://source.unsplash.com/random/200x200/?' + idx" alt="random image">
+        </div>
       </div>
     </div>
 </section>
 
 
 <!-- Customer Reviews -->
-<section class="my-8">
+<section class="my-20">
     <div class="text-center pb-10">
         <h1 class="text-4xl font-semibold text-gray-800">What our customers are saying about us</h1>
     </div>

@@ -14,6 +14,7 @@ export class MentionUsersComponent {
   highlightedOption = 0;
   selectedUsers: User[] = [];
   showAutocomplete = false;
+  inputVal?: string;
 
   constructor() {
   }
@@ -21,6 +22,8 @@ export class MentionUsersComponent {
   handleInputChange(event: Event) {
     const value = (event.target as HTMLSpanElement).innerHTML;
     const hasMentionedUsers = value.split(/[\s<br>]+/).filter((word) => /^@/.test(word));
+
+    this.inputVal = value;
 
     if (!!value && hasMentionedUsers.length > 0) {
       this.showAutocomplete = true;

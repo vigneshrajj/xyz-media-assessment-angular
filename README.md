@@ -7,7 +7,7 @@
 - 3 pages - Home, About, Gallery
 - Add header and footer to all pages
 - Handle basic authentication
-- Add guard to make gallery private
+- Add public gallery and also private gallery using angular guard
 - Allow mentioning users in the homepage
 - **Extra:** Made the website responsive
 - **Extra:** Added animation and full screen view for gallery images
