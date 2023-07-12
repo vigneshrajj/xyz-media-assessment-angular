@@ -1,6 +1,8 @@
 # XYZ Media
 
 ### Demo
+[Live Demo](https://xyz-media-vignesh.netlify.app/)
+
 [![preview](https://img.youtube.com/vi/XJcDMvvYaTA/0.jpg)](https://www.youtube.com/watch?v=XJcDMvvYaTA)
 
 ### Fulfilled Requirements
